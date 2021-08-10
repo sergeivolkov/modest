@@ -15,7 +15,7 @@
     <div class="wrapper">
         <div class="top-header">
             <div class="logo">
-                <img src="images/logo.png"/>
+                <img src="images/logo.png">
             </div>
 
             <nav class="desktop-menu">
@@ -527,32 +527,27 @@
         });
 
         $('#hamburger-button').click(function(){
-            //$(this).toggleClass('open');
             toggleMenu();
         });
-    });
 
-    var menu = document.querySelector(".mobile");
-    //var xIcon = document.querySelector(".hamburger-button");
+        var menu = document.querySelector(".mobile");
+        var body = document.querySelector("body");
 
-    $('.mobile').click(function(event){
-        toggleMenu();
-    });
-/*
-    var btn = document.getElementById('hamburger-button');
-    btn.addEventListener('click', toggleMenu, false);
-*/
+        $('.mobile').click(function(event){
+            toggleMenu();
+        });
 
-    function toggleMenu() {
-        $('#hamburger-button').toggleClass('open');
-        if (menu.classList.contains("showMenu")) {
-            menu.classList.remove("showMenu");
-        } else {
-            menu.classList.add("showMenu");
+        function toggleMenu() {
+            $('#hamburger-button').toggleClass('open');
+            if (menu.classList.contains("showMenu")) {
+                menu.classList.remove("showMenu");
+                $("body").css("overflow", "auto")
+            } else {
+                menu.classList.add("showMenu");
+                $("body").css("overflow", "hidden")
+            }
         }
-    }
-
-
+    });
 </script>
 
 </body>
